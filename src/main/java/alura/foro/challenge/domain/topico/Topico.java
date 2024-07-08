@@ -1,4 +1,4 @@
-package alura.foro.challenge.topico;
+package alura.foro.challenge.domain.topico;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.Instant;
-import java.util.Date;
 
 @Table(name = "topicos")
 @Entity(name = "Topico")

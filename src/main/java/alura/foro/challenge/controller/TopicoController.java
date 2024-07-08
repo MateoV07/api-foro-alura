@@ -1,6 +1,6 @@
 package alura.foro.challenge.controller;
 
-import alura.foro.challenge.topico.*;
+import alura.foro.challenge.domain.topico.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ public class TopicoController {
 
 	@PostMapping
 	public ResponseEntity<DatosRespuestaTopico> registrarTopic(@RequestBody @Valid DatosRegistroTopico datosRegistroTopico,
-	                                     UriComponentsBuilder uriComponentsBuilder){
+	                                                           UriComponentsBuilder uriComponentsBuilder){
 		Topico topico = topicoRepository.save(new Topico(datosRegistroTopico));
 		DatosRespuestaTopico datosRespuestaTopico = new DatosRespuestaTopico(topico.getId(),topico.getTitulo(),
 				topico.getMensaje(),topico.getFecha_creacion());
